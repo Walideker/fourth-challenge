@@ -8,7 +8,7 @@ connectingdb((err) => {
         app.listen(3000)
         console.log('app runnig');
     }
-    db = getDb
+    db = getDb()
 
 })
 app.get('/', (req, res) => {
@@ -18,7 +18,7 @@ app.get('/employe', (req, res) => {
     let employes = []
     db.collection('employe')
         .find()
-        .sort({ name: 0 })
+        .sort({ name: 1})
         .forEach(employe => employes.push(employe))
         .then(() => {
             res.json(employes)

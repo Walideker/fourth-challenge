@@ -14,6 +14,6 @@ module.exports = {
                 return cb(err)
             })
     },
-    getDb: () => { }
+    getDb: () => dbConnection
 
 }
